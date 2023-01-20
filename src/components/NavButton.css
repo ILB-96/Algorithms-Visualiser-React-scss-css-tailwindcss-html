@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: rgb(85, 75, 85);
+}
+
+:active,
+:hover,
+:focus {
+  outline: 0 !important;
+  outline-offset: 0;
+}
+::before,
+::after {
+  position: absolute;
+  content: "";
+}
+
+.navbtn {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0px 5px 0px;
+  min-width: 100px;
+}
+.navbtn.main span {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 10px;
+  transition: 0.3s;
+}
+.navbtn span {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 10px;
+  transition: 0.3s;
+}
+.navbtn-2::before {
+  background-color: rgb(28, 31, 30);
+  transition: 0.3s ease-out;
+}
+.navbtn-2 span {
+  color: rgb(28, 31, 30);
+  border: 1px solid rgb(28, 31, 30);
+  transition: 0.2s;
+}
+.navbtn-2 span:hover {
+  color: rgb(255, 255, 255);
+  transition: 0.2s 0.1s;
+}
+
+.navbtn.hover-slide-up::before {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  width: 100%;
+}
+
+.navbtn.hover-slide-up:hover::before {
+  height: 100%;
+}
+
+.activate {
+  background-color: rgb(28, 31, 30);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(28, 31, 30);
+}
+
+.navbtn-3 {
+  padding: 5px;
+}
+.navbtn-3 span {
+  color: rgb(255, 255, 255);
+  background-color: rgb(54, 56, 55);
+}
+.navbtn-3::before,
+.navbtn-3::after {
+  background: transparent;
+  z-index: 2;
+}
+.navbtn.hover-border-2::before,
+.navbtn.hover-border-2::after {
+  width: 10%;
+  height: 25%;
+  transition: 0.35s;
+}
+.navbtn.hover-border-2::before {
+  bottom: 0;
+  left: 0;
+  border-left: 1px solid rgb(28, 31, 30);
+  border-bottom: 1px solid rgb(28, 31, 30);
+}
+.navbtn.hover-border-2::after {
+  top: 0;
+  right: 0;
+  border-right: 1px solid rgb(28, 31, 30);
+  border-top: 1px solid rgb(28, 31, 30);
+}
+.navbtn.hover-border-2:hover::before,
+.navbtn.hover-border-2:hover::after {
+  width: 99%;
+  height: 99%;
+}
