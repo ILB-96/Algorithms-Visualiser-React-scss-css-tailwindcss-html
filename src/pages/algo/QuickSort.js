@@ -10,6 +10,8 @@ function QuickSort() {
           </text>
         </svg>
       </header>
+      <span class="material-symbols-rounded text-4xl">north</span>
+      <span class="material-symbols-rounded text-4xl">location_searching</span>
     </div>
   );
 }

@@ -34,7 +34,7 @@ const NavBar = (props) => {
             </NavLink>
           </div>
           <div className="hidden text-center sm:ml-6 lg:block">
-            <ul className=" menu-horizontal">
+            <ul className="menu-horizontal">
               <NavButton
                 itemTitle="Binary Search"
                 itemEndpoint="binarysearch"

@@ -1,11 +1,13 @@
 import { useRef, useEffect, useState } from "react";
+import { MainCard } from "../../components/ui/Cards";
+import AlgoDefinition from "./AlgoDefinition";
 import CodeSteps from "./CodeSteps";
 import PlayButton from "./PlayButton";
 import "./PlayButton.scss";
 function BinarySearch() {
   const stepRef = useRef(0);
   const [array, setArray] = useState([
-    ["15,", "32,", "40,", "45,", "46,", "69,", "79,", "80,", "95,", "96"],
+    ["15,", "32,", "40", "45,", "46,", "69,", "79,", "80,", "95,", "96"],
     [
       "start",
       "     ",
@@ -37,11 +39,8 @@ function BinarySearch() {
   return (
     <>
       <div className="grid-rows-7 grid">
-        <div className="col-span-2">
-          <CodeSteps current_step={stepRef.current} steps={steps} />
-        </div>
-        <div className="max-w-screen col-span-2 pl-[1rem] pt-[5rem] ">
-          <code className="font-new text-primary md:text-2xl lg:text-3xl">
+        <div className="m-auto flex py-[2rem] pb-[4rem]">
+          <code className="col-span-1 font-new text-primary md:text-2xl lg:text-3xl">
             <table className="table-fixed justify-center">
               <tbody>
                 <tr>
@@ -52,18 +51,44 @@ function BinarySearch() {
                   {array[0].map((item, index) => {
                     return (
                       <td className=" text-center" key={index}>
-                        {item}
+                        {item !== "40" ? (
+                          item
+                        ) : (
+                          <div className="mask mask-star-2 border-solid bg-base-300/50">
+                            {item}
+                          </div>
+                        )}
                       </td>
                     );
                   })}
                   <td>]</td>
+                </tr>
+                <tr className="">
+                  <td></td>
+                  <td></td>
+                  {array[1].map((item, index) => {
+                    return (
+                      <td className="whitespace-pre text-center" key={index}>
+                        {item === "     " ? (
+                          "    "
+                        ) : (
+                          <span class="material-symbols-rounded text-4xl">
+                            north
+                          </span>
+                        )}
+                      </td>
+                    );
+                  })}
                 </tr>
                 <tr>
                   <td></td>
                   <td></td>
                   {array[1].map((item, index) => {
                     return (
-                      <td className="whitespace-pre text-center" key={index}>
+                      <td
+                        className="whitespace-pre pt-0 text-center"
+                        key={index}
+                      >
                         {item}
                       </td>
                     );
@@ -72,6 +97,14 @@ function BinarySearch() {
               </tbody>
             </table>
           </code>
+        </div>
+        <div className="grid grid-cols-7">
+          <div className="col-span-4">
+            <CodeSteps current_step={stepRef.current} steps={steps} />
+          </div>
+          <div className="cols-start-5 col-span-3">
+            <AlgoDefinition />
+          </div>
         </div>
       </div>
     </>
