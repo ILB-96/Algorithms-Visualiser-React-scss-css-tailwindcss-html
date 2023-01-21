@@ -39,8 +39,8 @@ function BinarySearch() {
   return (
     <>
       <div className="grid-rows-7 grid">
-        <div className="m-auto flex py-[2rem] pb-[4rem]">
-          <code className="col-span-1 font-new text-primary md:text-2xl lg:text-3xl">
+        <div className="m-auto flex py-[2rem] pb-[4rem] ">
+          <code className="col-span-1 font-new text-3xl text-primary max-sm:text-sm">
             <table className="table-fixed justify-center">
               <tbody>
                 <tr>
@@ -63,7 +63,7 @@ function BinarySearch() {
                   })}
                   <td>]</td>
                 </tr>
-                <tr className="">
+                <tr>
                   <td></td>
                   <td></td>
                   {array[1].map((item, index) => {
