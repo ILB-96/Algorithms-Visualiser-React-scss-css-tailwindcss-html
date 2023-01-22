@@ -1,13 +1,11 @@
 import { useState } from "react";
 import "./PlayButton.scss";
-function PlayButton() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const ButtonHandler = () => {};
-  if (!isPlaying) {
+function PlayButton(props) {
+  if (!props.isActive) {
     return (
       <div className="circle container">
         <button
-          onClick={() => setIsPlaying(!isPlaying)}
+          onClick={props.handler}
           className="circle__btn  items-center justify-center pl-[0.2rem]"
         >
           <ion-icon className="play" name="play"></ion-icon>
@@ -20,7 +18,7 @@ function PlayButton() {
   return (
     <div className="circle container ">
       <button
-        onClick={() => setIsPlaying(!isPlaying)}
+        onClick={props.handler}
         className="circle__btn items-center justify-center"
       >
         <ion-icon className="pause" name="pause"></ion-icon>

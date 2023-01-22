@@ -4,9 +4,9 @@ import "./CodeSteps.css";
 function AlgoDefinition() {
   return (
     <MainCard>
-      <div className="max-h-[55vh] min-h-[51vh]  overflow-scroll max-sm:max-h-[51vh]">
-        <article className="prose text-3xl max-md:text-xl">
-          <h1 className="text-center text-3xl max-md:text-xl">
+      <div className="max-h-[54vh] min-h-[51vh]  overflow-scroll">
+        <article className="prose text-2xl max-md:text-xl">
+          <h1 className="text-center text-2xl max-md:text-xl">
             Algorithm Description
           </h1>
           <p>
