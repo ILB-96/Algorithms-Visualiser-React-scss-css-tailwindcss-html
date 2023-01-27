@@ -30,36 +30,33 @@ function App() {
     }
   }, [location, displayLocation]);
   return (
-    <>
-      <NavBar>
-        <RouteIntroDiv
-          transitionStage={transitionStage}
-          setTransitionStage={setTransitionStage}
-          setDisplayLocation={setDisplayLocation}
-          location={location}
-        >
-          <Routes location={displayLocation} key={location.pathname}>
-            <Route exac path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/binarysearch" element={<BinarySearch />} />
-            <Route path="/quicksort" element={<QuickSort />} />
-            <Route path="/heapsort" element={<HeapSort />} />
-            <Route path="/mergesort" element={<MergeSort />} />
-            <Route path="/insertionsort" element={<InsertionSort />} />
-            <Route path="/selectionsort" element={<SelectionSort />} />
-            <Route path="/bubblesort" element={<BubbleSort />} />
-            <Route path="/linearsearch" element={<LinearSearch />} />
-            <Route
-              path="/breadthfirstsearch"
-              element={<BreadthFirstSearch />}
-            />
-            <Route path="/depthfirstsearch" element={<DepthFirstSearch />} />
-          </Routes>
-        </RouteIntroDiv>
-        <Footer />
-      </NavBar>
-    </>
+    <div className="min-h-screen grid grid-rows-layout">
+      <NavBar />
+      <RouteIntroDiv
+        transitionStage={transitionStage}
+        setTransitionStage={setTransitionStage}
+        setDisplayLocation={setDisplayLocation}
+        location={location}
+      >
+        <Routes location={displayLocation} key={location.pathname}>
+          <Route exac path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/binarysearch" element={<BinarySearch />} />
+          <Route path="/quicksort" element={<QuickSort />} />
+          <Route path="/heapsort" element={<HeapSort />} />
+          <Route path="/mergesort" element={<MergeSort />} />
+          <Route path="/insertionsort" element={<InsertionSort />} />
+          <Route path="/selectionsort" element={<SelectionSort />} />
+          <Route path="/bubblesort" element={<BubbleSort />} />
+          <Route path="/linearsearch" element={<LinearSearch />} />
+          <Route path="/breadthfirstsearch" element={<BreadthFirstSearch />} />
+          <Route path="/depthfirstsearch" element={<DepthFirstSearch />} />
+        </Routes>
+      </RouteIntroDiv>
+
+      <Footer />
+    </div>
   );
 }
 
