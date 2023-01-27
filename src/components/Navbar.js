@@ -1,7 +1,4 @@
-import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { NavLink } from "react-router-dom";
 import "./NavButton.css";
 import { NavButton } from "./NavButton";
 

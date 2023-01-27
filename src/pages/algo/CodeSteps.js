@@ -5,7 +5,7 @@ function CodeSteps(props) {
   let arrowLocation = props.current_step;
   return (
     <MainCard>
-      <h1 className="max-sm:text-base  text-2xl">Algorithm Code</h1>
+      <h1 className="max-sm:text-base text-2xl">Algorithm Code</h1>
       <code className="grid-rows-12  grid grid-col-12 text-xl overflow-scroll max-sm:text-sm">
         <motion.div
           layout

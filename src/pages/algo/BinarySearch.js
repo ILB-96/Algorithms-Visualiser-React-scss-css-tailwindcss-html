@@ -11,11 +11,10 @@ function BinarySearch() {
   let startcol = useRef("invisible ");
   let endcol = useRef("invisible");
   let midcol = useRef("invisible");
+  let intervalRef = useRef();
   const [counter, setCounter] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  let intervalRef = useRef();
   const array = [15, 32, 40, 45, 46, 69, 79, 80, 95, 96];
-  console.log(pointers.current, counter, currentStep);
   const IncreaseCounter = () => {
     setCounter((counter) => counter + 1);
   };
@@ -107,6 +106,7 @@ function BinarySearch() {
     }
     return () => clearInterval(intervalRef.current);
   }, [isActive, counter]);
+
   const HandlePlayClick = () => {
     if (isActive) {
       clearInterval(intervalRef.current);
