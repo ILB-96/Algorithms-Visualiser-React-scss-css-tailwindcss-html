@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-      <footer className="footer fixed opacity-50 mt-5 bottom-0 footer-center p-1 bg-base-300 text-base-content">
+      <footer className="footer sticky opacity-50 h-full mb-0 footer-center bg-base-300 text-base-content">
         <p>Copyright © {new Date().getFullYear()} - All Rights Reserved</p>
       </footer>
     </>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./PlayButton.scss";
 function PlayButton(props) {
   if (!props.isActive) {

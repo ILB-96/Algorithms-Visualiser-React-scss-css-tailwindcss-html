@@ -1,7 +1,7 @@
 export const RouteIntroDiv = (props) => {
   return (
     <div
-      className={`${props.transitionStage} m-2 flex flex-col items-center justify-center`}
+      className={`${props.transitionStage} m-2`}
       onAnimationEnd={() => {
         if (props.transitionStage === "fadeOut") {
           props.setTransitionStage("fadeIn");

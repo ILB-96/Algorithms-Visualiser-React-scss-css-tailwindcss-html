@@ -35,15 +35,15 @@ a:hover {
 }
 
 /* Breadcrups CSS */
-
+/* 
 .arrow-steps .step {
-  font-size: 14px;
+  font-size: 18px;
   text-align: left;
   color: #666;
   cursor: default;
   margin: 0 3px;
   padding: 10px 10px 5px 15px;
-  min-width: 180px;
+  min-width: 120px;
 
   position: relative;
   background-color: #d9e3f7;
@@ -52,9 +52,9 @@ a:hover {
   -ms-user-select: none;
   user-select: none;
   transition: background-color 0.2s ease;
-}
+} */
 
-.arrow-steps .step:after,
+/* .arrow-steps .step:after,
 .arrow-steps .step:before {
   content: " ";
   position: absolute;
@@ -67,7 +67,7 @@ a:hover {
   border-left: 17px solid #d9e3f7;
   z-index: 2;
   transition: border-color 0.2s ease;
-}
+} */
 
 .arrow-steps .step:before {
   right: auto;
