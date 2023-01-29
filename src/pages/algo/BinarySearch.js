@@ -24,12 +24,12 @@ function BinarySearch() {
         case 1:
           currentStep.current = "row-start-2 row-end-3";
           pointers.current = [0, -1, -1];
-          startcol.current = "col-start-8 max-md:col-start-4";
+          startcol.current = "col-start-8 max-md:col-start-3";
           break;
         case 2:
           currentStep.current = "row-start-3 row-end-4";
           pointers.current = [0, -1, 9];
-          endcol.current = "col-start-26 max-md:col-start-31";
+          endcol.current = "col-start-26 max-md:col-start-30";
           break;
         case 3:
         case 8:
@@ -45,14 +45,14 @@ function BinarySearch() {
           );
           switch (pointers.current[1]) {
             case 4:
-              midcol.current = " col-start-16 max-md:col-start-16";
+              midcol.current = " col-start-16 max-md:col-start-15";
               break;
             case 1:
-              midcol.current = "col-start-10 max-md:col-start-7";
+              midcol.current = "col-start-10 max-md:col-start-6";
               break;
             case 2:
               startcol.current = "invisible";
-              midcol.current = "col-start-12 max-md:col-start-10";
+              midcol.current = "col-start-12 max-md:col-start-9";
               pointers.current = [-1, 2, -1];
               break;
             default:
@@ -84,7 +84,7 @@ function BinarySearch() {
         case 7:
           currentStep.current = "row-start-9 row-end-10";
           pointers.current = [0, 4, 3];
-          endcol.current = "col-start-14 max-md:col-start-13";
+          endcol.current = "col-start-14 max-md:col-start-12";
           break;
         case 12:
           currentStep.current = "row-start-10 row-end-11";
@@ -92,7 +92,7 @@ function BinarySearch() {
         case 13:
           currentStep.current = "row-start-11 row-end-12";
           pointers.current = [2, 1, 3];
-          startcol.current = "col-start-12 max-md:col-start-10";
+          startcol.current = "col-start-12 max-md:col-start-9";
           break;
         default:
           pointers.current = [-1, -1, -1];
@@ -133,62 +133,104 @@ function BinarySearch() {
 
   return (
     <>
-      <div className="grid grid-rows-10 grid-cols-32 text-center text-3xl max-md:text-xl ">
-        <div className="row-start-1 row-end-2 col-start-6 max-md:col-start-1 mt-auto col-span-2">
+      <div className="grid grid-rows-10 grid-cols-32 text-center text-3xl max-md:text-base ">
+        <div className="row-start-1 row-end-3 col-start-1 max-md:row-start-4 h-3/4 max-md:row-end-7 max-md:col-start-14 col-span-1">
           <PlayButton handler={HandlePlayClick} isActive={isActive} />
         </div>
-        <div className="row-start-1 row-end-2 col-start-8 max-md:col-start-4 col-span-2 mt-auto">
+        <div className="row-start-1 row-end-2 col-start-8 max-md:col-start-3 col-span-2 mt-auto">
           {"[" + array[0]}
         </div>
-        <div className="row-start-1 row-end-2 col-start-10 max-md:col-start-7 col-span-2 mt-auto">
+        <div className="row-start-1 row-end-2 col-start-9 max-md:col-start-5 col-span-2 max-md:col-span-1 ">
+          <span class="material-symbols-outlined text-divider relative max-md:text-xl top-3 max-md:top-1 text-orange-500/30">
+            more_vert
+          </span>
+        </div>
+        <div className="row-start-1 row-end-2 col-start-10 max-md:col-start-6 col-span-2 mt-auto">
           {array[1]}
         </div>
-        <div className="row-start-1 rounded-full border-dotted border-2 border-red-300 row-end-2 col-start-12 max-md:col-start-10 col-span-2 mt-auto">
+        <div className="row-start-1 bg-red-700/20 rounded-md row-end-2 col-start-12 max-md:col-start-9 col-span-2 mt-auto">
           {array[2]}
         </div>
-        <div className="row-start-1 row-end-2 col-start-14 col-span-2 max-md:col-start-13 mt-auto">
+        <div className="row-start-1 row-end-2 col-start-14 col-span-2 max-md:col-start-12 mt-auto ">
           {array[3]}
         </div>
-        <div className="row-start-1 row-end-2 col-start-16 col-span-2 max-md:col-start-16 mt-auto">
+        <div className="row-start-1 row-end-2 col-start-15 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-14">
+          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+            more_vert
+          </span>
+        </div>
+        <div className="row-start-1 row-end-2 col-start-16 col-span-2 max-md:col-start-15 mt-auto ">
           {array[4]}
         </div>
-        <div className="row-start-1 row-end-2 col-start-18 max-md:col-start-19 col-span-2 mt-auto">
+        <div className="row-start-1 row-end-2 col-start-17 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-17 ">
+          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+            more_vert
+          </span>
+        </div>
+        <div className="row-start-1 row-end-2 col-start-18 max-md:col-start-18 col-span-2 mt-auto ">
           {array[5]}
         </div>
-        <div className="row-start-1 row-end-2 col-start-20 max-md:col-start-22 col-span-2 mt-auto">
+        <div className="row-start-1 row-end-2 col-start-19 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-20">
+          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+            more_vert
+          </span>
+        </div>
+        <div className="row-start-1 row-end-2 col-start-20 max-md:col-start-21 col-span-2 mt-auto">
           {array[6]}
         </div>
-        <div className="row-start-1 row-end-2 col-start-22 max-md:col-start-25 col-span-2 mt-auto">
+        <div className="row-start-1 row-end-2 col-start-21 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-23">
+          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+            more_vert
+          </span>
+        </div>
+        <div className="row-start-1 row-end-2 col-start-22 max-md:col-start-24 col-span-2 mt-auto">
           {array[7]}
         </div>
-        <div className="row-start-1 row-end-2 col-start-24 max-md:col-start-28 col-span-2 mt-auto ">
+        <div className="row-start-1 row-end-2 col-start-23 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-26">
+          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+            more_vert
+          </span>
+        </div>
+        <div className="row-start-1 row-end-2 col-start-24 max-md:col-start-27 col-span-2 mt-auto ">
           {array[8]}
         </div>
-        <div className="row-start-1 row-end-2 col-start-26 col-span-2 max-md:col-start-31 mt-auto">
+        <div className="row-start-1 row-end-2 col-start-25 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-29">
+          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+            more_vert
+          </span>
+        </div>
+        <div className="row-start-1 row-end-2 col-start-26 col-span-2 max-md:col-start-30 mt-auto">
           {array[9] + "]"}
         </div>
         <motion.div
           layout
           className={"row-start-2 row-end-3 col-span-2 " + startcol.current}
         >
-          <span className="material-symbols-rounded text-4xl">north</span>
+          <span className="material-symbols-rounded text-4xl max-md:text-arrow leading-[2rem] ">
+            north
+          </span>
         </motion.div>
         <motion.div
           layout
           className={"row-start-2 row-end-3 col-span-2 " + midcol.current}
         >
-          <span className="material-symbols-rounded text-4xl">north</span>
+          <span className="material-symbols-rounded text-4xl max-md:text-arrow leading-[2rem] ">
+            north
+          </span>
         </motion.div>
         <motion.div
           layout
           className={"row-start-2 row-end-3 col-span-2 " + endcol.current}
         >
-          <span className="material-symbols-rounded text-4xl">north</span>
+          <span className="material-symbols-rounded text-4xl max-md:text-arrow leading-[2rem] ">
+            north
+          </span>
         </motion.div>
         <motion.div
           layout
           className={
-            "row-start-3 row-end-4 col-span-2 mb-auto " + startcol.current
+            "row-start-3 row-end-4 col-span-2 mb-auto leading-[0] pb-5 " +
+            startcol.current
           }
         >
           start
@@ -196,7 +238,8 @@ function BinarySearch() {
         <motion.div
           layout
           className={
-            "row-start-3 row-end-4 col-span-2 mb-auto " + midcol.current
+            "row-start-3 row-end-4 col-span-2 mb-auto leading-[0] pb-5 " +
+            midcol.current
           }
         >
           mid
@@ -204,12 +247,13 @@ function BinarySearch() {
         <motion.div
           layout
           className={
-            "row-start-3 row-end-4 col-span-2 mb-auto " + endcol.current
+            "row-start-3 row-end-4 col-span-2 mb-auto leading-[0] pb-5 " +
+            endcol.current
           }
         >
           end
         </motion.div>
-        <div className="divider row-start-5 row-end-6 p-0 m-0" />
+        <div className="divider row-start-5 row-end-6 p-0 m-0 leading-[] max-md:hidden" />
         <div className="row-start-6 row-end-11 col-start-1 col-end-18">
           <CodeSteps current_step={currentStep.current} steps={steps} />
         </div>

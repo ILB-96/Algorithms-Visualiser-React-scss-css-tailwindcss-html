@@ -136,6 +136,10 @@ module.exports = {
       gridTemplateRows: {
         layout: "auto 1fr auto",
       },
+      fontSize: {
+        arrow: ["1.5rem", "1.5rem"],
+        divider: ["2.5rem", "2rem"],
+      },
     },
   },
   plugins: [
