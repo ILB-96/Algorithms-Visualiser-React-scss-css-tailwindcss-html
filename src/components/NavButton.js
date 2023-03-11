@@ -11,19 +11,17 @@ export const NavButton = (props) => {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              classNames(
-                isActive ? "navbtn activate " : "navbtn navbtn-2 hover-slide-up"
-              )
-            }
-            aria-current={({ isActive }) => (isActive ? "page" : undefined)}
-            to={"/" + props.itemEndpoint}
-          >
-            <span>{props.itemTitle}</span>
-          </NavLink>
-        </li>
+        <NavLink
+          className={({ isActive }) =>
+            classNames(
+              isActive ? "navbtn activate " : "navbtn navbtn-2 hover-slide-up"
+            )
+          }
+          aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+          to={"/" + props.itemEndpoint}
+        >
+          <span>{props.itemTitle}</span>
+        </NavLink>
       </Suspense>
     </>
   );

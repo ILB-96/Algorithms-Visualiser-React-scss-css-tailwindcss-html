@@ -11,13 +11,13 @@ const Home = (props) => {
                 AlgoViz - Algorithm Visualizer
               </h1>
               <p className=" py-5 text-info max-sm:text-2xl md:text-4xl">
-                Here you can find information about algorithms and data
-                structures.
-                <br></br>
-                Each algorithm has a description, code implemintation in Python,
-                use case recommandations, and a step by step visualizer of how
-                it works.
-                <br></br>
+                Unlock the Power of Algorithms and Data Structures!<br></br>
+                As a Programmer student, mastering these concepts can be the key
+                to success.<br></br>
+                Get ahead of the curve with our comprehensive platform -
+                complete with algorithm descriptions, Python code, use case
+                recommendations, and interactive visualizations. Start your
+                journey now!<br></br>
                 Don't know where to start?
               </p>
               <button className="btn-primary btn">Try Random</button>

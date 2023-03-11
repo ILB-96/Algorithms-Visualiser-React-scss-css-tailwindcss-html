@@ -9,10 +9,10 @@ function PlayButton(props) {
   }
   return (
     <svg
-      width="90"
-      height="90"
+      width="51"
+      height="45"
       id="pause"
-      viewBox="45 20 50 110"
+      viewBox="25 15 50 70"
       onClick={() => {
         props.handler();
         if (props.isActive) {

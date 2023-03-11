@@ -1,12 +1,12 @@
 import React from "react";
-import { MainCard } from "../../components/ui/Cards";
-function AlgoDefinition(props) {
+
+export default function Usecases(props) {
   return (
     <>
       <code className="text-xl max-sm:text-base">
-        {props.info.map((item, index) => (
+        {props.cases.map((item, index) => (
           <div className="" key={index}>
-            {`${item}`}
+            {`${index + 1}. ${item}`}
             <br></br>
           </div>
         ))}
@@ -14,5 +14,3 @@ function AlgoDefinition(props) {
     </>
   );
 }
-
-export default AlgoDefinition;

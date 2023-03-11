@@ -130,11 +130,11 @@ module.exports = {
         28: "28",
       },
       gridTemplateColumns: {
-        // Simple 16 column grid
         32: "repeat(32, minmax(0, 1fr))",
       },
       gridTemplateRows: {
         layout: "auto 1fr auto",
+        16: "repeat(16, minmax(0, 1fr))",
       },
       fontSize: {
         arrow: ["1.5rem", "1.5rem"],

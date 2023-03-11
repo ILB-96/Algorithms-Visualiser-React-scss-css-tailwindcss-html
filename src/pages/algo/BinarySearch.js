@@ -2,9 +2,45 @@ import { useRef, useEffect, useState } from "react";
 import AlgoDefinition from "./AlgoDefinition";
 import CodeSteps from "./CodeSteps";
 import PlayButton from "./PlayButton";
+import InfoTabs from "../../components/ui/InfoTabs";
 import { motion } from "framer-motion";
 import "./PlayButton.scss";
+import Usecases from "./Usecases";
+import { useCallback } from "react";
 
+const AlgoDef = [
+  "Binary search is a search algorithm that finds the position of a target value within a sorted array.",
+  "Binary search compares the target value to the middle element of the array.",
+  "If they are not equal, the half in which the target cannot lie \
+is eliminated and the search continues on the remaining half, again\
+taking the middle element to compare to the target value, and repeating\
+this until the target value is found.",
+];
+const steps = [
+  "def binary_search(sorted_array, target):",
+  "  start = 0",
+  "  end = len(sorted_array) - 1",
+  "  while start <= end:",
+  "    mid = (start+end) // 2",
+  "    if sorted_array[mid] == target:",
+  "      return mid",
+  "    elif sorted_array[mid] > target:",
+  "      end = mid - 1",
+  "    else:",
+  "      start = mid + 1",
+  "  return -1",
+];
+const usecases = [
+  "Searching for a specific number in a list of numbers.",
+  "Finding a word in a dictionary,",
+  "Looking up a date in a timeline",
+  "Finding a specific record in a database.",
+  "Searching for a song in a playlist.",
+  "Checking if a name is in a phonebook.",
+  "It's used because it's a quick way to search a large list of items.",
+];
+
+const array = [15, 32, 40, 45, 46, 69, 79, 80, 95, 96];
 function BinarySearch() {
   let currentStep = useRef("row-start-1 row-end-2");
   let pointers = useRef([-1, -1, -1]);
@@ -14,7 +50,6 @@ function BinarySearch() {
   let intervalRef = useRef();
   const [counter, setCounter] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const array = [15, 32, 40, 45, 46, 69, 79, 80, 95, 96];
   const IncreaseCounter = () => {
     setCounter((counter) => counter + 1);
   };
@@ -107,28 +142,30 @@ function BinarySearch() {
     return () => clearInterval(intervalRef.current);
   }, [isActive, counter]);
 
-  const HandlePlayClick = () => {
+  const HandlePlayClick = useCallback(() => {
     if (isActive) {
       clearInterval(intervalRef.current);
     } else {
       intervalRef.current = setInterval(IncreaseCounter, 2000);
     }
     setIsActive((currentIsActive) => !currentIsActive);
-  };
-
-  const steps = [
-    "def binary_search(sorted_array, target):",
-    "  start = 0",
-    "  end = len(sorted_array) - 1",
-    "  while start <= end:",
-    "    mid = (start+end) // 2",
-    "    if sorted_array[mid] == target:",
-    "      return mid",
-    "    elif sorted_array[mid] > target:",
-    "      end = mid - 1",
-    "    else:",
-    "      start = mid + 1",
-    "  return -1",
+  }, [isActive]);
+  let tabs = [
+    {
+      icon: "code_blocks",
+      label: "Algorithm",
+      content: <CodeSteps current_step={currentStep.current} steps={steps} />,
+    },
+    {
+      icon: "description",
+      label: "Description",
+      content: <AlgoDefinition info={AlgoDef} />,
+    },
+    {
+      icon: "bolt",
+      label: "Usecases",
+      content: <Usecases cases={usecases} />,
+    },
   ];
 
   return (
@@ -141,7 +178,7 @@ function BinarySearch() {
           {"[" + array[0]}
         </div>
         <div className="row-start-1 row-end-2 col-start-9 max-md:col-start-5 col-span-2 max-md:col-span-1 ">
-          <span class="material-symbols-outlined text-divider relative max-md:text-xl top-3 max-md:top-1 text-orange-500/30">
+          <span className="material-symbols-outlined text-divider relative max-md:text-xl top-3 max-md:top-1 text-orange-500/30">
             more_vert
           </span>
         </div>
@@ -155,7 +192,7 @@ function BinarySearch() {
           {array[3]}
         </div>
         <div className="row-start-1 row-end-2 col-start-15 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-14">
-          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+          <span className="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
             more_vert
           </span>
         </div>
@@ -163,7 +200,7 @@ function BinarySearch() {
           {array[4]}
         </div>
         <div className="row-start-1 row-end-2 col-start-17 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-17 ">
-          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+          <span className="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
             more_vert
           </span>
         </div>
@@ -171,7 +208,7 @@ function BinarySearch() {
           {array[5]}
         </div>
         <div className="row-start-1 row-end-2 col-start-19 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-20">
-          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+          <span className="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
             more_vert
           </span>
         </div>
@@ -179,7 +216,7 @@ function BinarySearch() {
           {array[6]}
         </div>
         <div className="row-start-1 row-end-2 col-start-21 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-23">
-          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+          <span className="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
             more_vert
           </span>
         </div>
@@ -187,7 +224,7 @@ function BinarySearch() {
           {array[7]}
         </div>
         <div className="row-start-1 row-end-2 col-start-23 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-26">
-          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+          <span className="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
             more_vert
           </span>
         </div>
@@ -195,7 +232,7 @@ function BinarySearch() {
           {array[8]}
         </div>
         <div className="row-start-1 row-end-2 col-start-25 col-span-2 mt-auto max-md:col-span-1 max-md:col-start-29">
-          <span class="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
+          <span className="material-symbols-outlined text-divider relative top-3 text-orange-500/30 max-md:text-xl max-md:top-1">
             more_vert
           </span>
         </div>
@@ -253,12 +290,9 @@ function BinarySearch() {
         >
           end
         </motion.div>
-        <div className="divider row-start-5 row-end-6 p-0 m-0 leading-[] max-md:hidden" />
-        <div className="row-start-6 row-end-11 col-start-1 col-end-18">
-          <CodeSteps current_step={currentStep.current} steps={steps} />
-        </div>
-        <div className="row-start-6 row-end-11 col-start-18 col-end-33">
-          <AlgoDefinition />
+        <div className="divider row-start-5 row-end-6 p-0 m-0 max-md:hidden" />
+        <div className="row-start-6 row-end-12 col-start-1 col-end-33">
+          <InfoTabs tabs={tabs} />
         </div>
       </div>
     </>
