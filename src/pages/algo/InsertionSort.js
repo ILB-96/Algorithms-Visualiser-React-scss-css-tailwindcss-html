@@ -5,7 +5,10 @@ import PlayButton from "./PlayButton";
 import InfoTabs from "../../components/ui/InfoTabs";
 import { motion } from "framer-motion";
 import "./PlayButton.scss";
+import "../../components/ui/ArrayCard.js";
 import Usecases from "./Usecases";
+import ArrayCard from "../../components/ui/ArrayCard.js";
+import Pointer from "../../components/ui/Pointer.js";
 const algoDef = [
   "Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.",
   "The array is virtually split into a sorted and an unsorted part.",
@@ -263,33 +266,9 @@ function InsertionSort() {
   return (
     <>
       <div className="grid grid-rows-16 grid-cols-32 text-center text-3xl max-md:text-base ">
-        <div className="row-start-1 row-end-1 col-start-2 col-end-4 max-md:row-start-4 h-3/4 max-md:row-end-7 max-md:col-start-14">
           <PlayButton handler={HandlePlayClick} isActive={isActive} />
-        </div>
-        <div className="leading-[1rem] h-0 row-start-2 row-end-3 col-start-7 max-md:col-start-3 col-span-2 ">
-          {"["}
-        </div>
-        {main.current.map((item, index) => {
-          return (
-            <motion.div
-              layout
-              className={"h-0 leading-[1.2rem] " + item.col + " " + item.row}
-            >
-              {item.val}
-            </motion.div>
-          );
-        })}
-        <motion.div className="leading-[1rem] h-0 row-start-2 row-end-3 col-start-27 col-span-2 max-md:col-start-30 ">
-          {"]"}
-        </motion.div>
-        <motion.div
-          layout
-          className={"row-start-2 h-0 row-end-3 col-span-2 " + midcol.current}
-        >
-          <span className="material-symbols-rounded h-0 text-4xl max-md:text-arrow  leading-[5rem]">
-            north
-          </span>
-        </motion.div>
+        <ArrayCard array={main.current}/>
+        <Pointer name="curr" col={midcol.current} start="row-start-3" arrow_start="row-start-2" />
         <motion.div
           layout
           className={"row-start-1 row-end-2 h-0 col-span-2 " + endcol.current}
@@ -297,16 +276,6 @@ function InsertionSort() {
           <span className="material-symbols-rounded h-0 text-4xl max-md:text-arrow ">
             north
           </span>
-        </motion.div>
-
-        <motion.div
-          layout
-          className={
-            "row-start-3 row-end-4 h-0 col-span-2 leading-[3rem] " +
-            midcol.current
-          }
-        >
-          curr
         </motion.div>
         <motion.div
           layout
@@ -317,10 +286,8 @@ function InsertionSort() {
         >
           main
         </motion.div>
-        {/* <div className="divider row-start-4 row-end-5 p-0 m-0 max-md:hidden" /> */}
-        <div className="row-start-4 row-end-14 col-start-1 col-end-33">
+        {/* <div className="divider row-start-4 row-end-5 p-0 m-0 max-md:hidden" /> */}   
           <InfoTabs tabs={tabs.current} />
-        </div>
       </div>
     </>
   );

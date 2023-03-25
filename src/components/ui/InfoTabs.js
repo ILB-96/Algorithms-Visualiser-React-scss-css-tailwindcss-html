@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function InfoTabs(props) {
   const [selectedTab, setSelectedTab] = useState(props.tabs[0]);
   return (
-    <div className="window ">
+    <div className="row-start-4 row-end-14 col-start-1 col-end-33 window">
       <nav>
         <ul>
           {props.tabs.map((item, index) => (

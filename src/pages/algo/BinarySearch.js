@@ -8,7 +8,7 @@ import "./PlayButton.scss";
 import Usecases from "./Usecases";
 import { useCallback } from "react";
 
-const AlgoDef = [
+const algoDef = [
   "Binary search is a search algorithm that finds the position of a target value within a sorted array.",
   "Binary search compares the target value to the middle element of the array.",
   "If they are not equal, the half in which the target cannot lie \
@@ -50,6 +50,23 @@ function BinarySearch() {
   let intervalRef = useRef();
   const [counter, setCounter] = useState(0);
   const [isActive, setIsActive] = useState(false);
+  let tabs = useRef([
+    {
+      icon: "code_blocks",
+      label: "Algorithm",
+      content: <CodeSteps current_step={currentStep.current} steps={steps} />,
+    },
+    {
+      icon: "description",
+      label: "Description",
+      content: <AlgoDefinition info={algoDef} />,
+    },
+    {
+      icon: "bolt",
+      label: "Usecases",
+      content: <Usecases cases={usecases} />,
+    },
+  ]);
   const IncreaseCounter = () => {
     setCounter((counter) => counter + 1);
   };
@@ -150,23 +167,7 @@ function BinarySearch() {
     }
     setIsActive((currentIsActive) => !currentIsActive);
   }, [isActive]);
-  let tabs = [
-    {
-      icon: "code_blocks",
-      label: "Algorithm",
-      content: <CodeSteps current_step={currentStep.current} steps={steps} />,
-    },
-    {
-      icon: "description",
-      label: "Description",
-      content: <AlgoDefinition info={AlgoDef} />,
-    },
-    {
-      icon: "bolt",
-      label: "Usecases",
-      content: <Usecases cases={usecases} />,
-    },
-  ];
+
 
   return (
     <>
@@ -290,10 +291,7 @@ function BinarySearch() {
         >
           end
         </motion.div>
-        <div className="divider row-start-5 row-end-6 p-0 m-0 max-md:hidden" />
-        <div className="row-start-6 row-end-12 col-start-1 col-end-33">
-          <InfoTabs tabs={tabs} />
-        </div>
+          <InfoTabs tabs={tabs.current} />
       </div>
     </>
   );
